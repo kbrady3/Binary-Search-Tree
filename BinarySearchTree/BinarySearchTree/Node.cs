@@ -21,6 +21,10 @@ namespace BinarySearchTree
 
         public void Insert(int position, string name)
         {
+            if (IData == 0)
+            {
+                IData = position;
+            }
             if(position <= IData) //If position is less than or equal to IData (existing position), the new node will go on the left
             {
                 if(Left == null) //If the left node is null
@@ -66,7 +70,15 @@ namespace BinarySearchTree
                 }
                 catch
                 {
-                    return "No results found.";
+                    if (Right != null)
+                    {
+                        return Right.Search(name);
+                    }
+                    else
+                    {
+                        return Left.Search(name);
+                    }
+                    return "No results found for search term '" + name + "'.";
                 }
             }
         }
