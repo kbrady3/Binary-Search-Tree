@@ -45,13 +45,30 @@ namespace BinarySearchTree
             }
         }
 
-        //public string Search(string name)
-        //{
-        //    if (name == SData)
-        //    {
-        //        return "Name: " + SData + ", Position: " + IData;
-        //    }
-        //    else if (name)
-        //}
+        public string Search(string name)
+        {
+            if (name == SData)
+            {
+                return "Search results: Name: " + SData + ", Position: " + IData;
+            }
+            else
+            {
+                try
+                {
+                    if (Left != null)
+                    {
+                        return Left.Search(name);
+                    }
+                    else
+                    {
+                        return Right.Search(name);
+                    }
+                }
+                catch
+                {
+                    return "No results found.";
+                }
+            }
+        }
     }
 }

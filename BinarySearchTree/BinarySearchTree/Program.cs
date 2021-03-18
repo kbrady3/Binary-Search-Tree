@@ -17,6 +17,7 @@ namespace BinarySearchTree
             node.Insert(7, "James");
             node.Insert(6, "Ethan");
             node.Insert(4, "Jacob");
+            Console.WriteLine(node.Search("sdf"));
         }
     }
 }
