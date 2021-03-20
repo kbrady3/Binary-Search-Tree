@@ -51,35 +51,25 @@ namespace BinarySearchTree
 
         public string Search(string name)
         {
-            if (name == SData)
+            if (string.Equals(name, SData))
             {
                 return "Search results: Name: " + SData + ", Position: " + IData;
             }
             else
             {
-                try
+                if (Left != null)
                 {
-                    if (Left != null)
-                    {
-                        return Left.Search(name);
-                    }
-                    else
-                    {
-                        return Right.Search(name);
-                    }
+                    Left.Search(name);
                 }
-                catch
+
+                Console.WriteLine("Data: " + SData);
+
+                if (Right != null)
                 {
-                    if (Right != null)
-                    {
-                        return Right.Search(name);
-                    }
-                    else
-                    {
-                        return Left.Search(name);
-                    }
-                    return "No results found for search term '" + name + "'.";
+                    Right.Search(name);
                 }
+
+                return "Error";
             }
         }
     }
