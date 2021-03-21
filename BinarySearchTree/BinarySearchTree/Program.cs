@@ -18,10 +18,10 @@ namespace BinarySearchTree
             boysNameTree.Insert(6, "Ethan");
             boysNameTree.Insert(4, "Jacob");
             Console.WriteLine(boysNameTree.Search("Noah"));
-            Console.WriteLine(boysNameTree.Search("Liam"));
-            Console.WriteLine(boysNameTree.Search("Ethan"));
-            Console.WriteLine(boysNameTree.Search("Non-Existent Name"));
-            Console.WriteLine(boysNameTree.Search("Kabrina"));
+            //Console.WriteLine(boysNameTree.Search("Liam"));
+            //Console.WriteLine(boysNameTree.Search("Ethan"));
+            //Console.WriteLine(boysNameTree.Search("Non-Existent Name"));
+            //Console.WriteLine(boysNameTree.Search("Kabrina"));
 
             Node girlsNameTree = new Node();
             girlsNameTree.Insert(5, "Isabella");
@@ -34,11 +34,11 @@ namespace BinarySearchTree
             girlsNameTree.Insert(7, "Abigail");
             girlsNameTree.Insert(6, "Mia");
             girlsNameTree.Insert(4, "Ava");
-            Console.WriteLine(girlsNameTree.Search("Ava"));
-            Console.WriteLine(girlsNameTree.Search("Mia"));
-            Console.WriteLine(girlsNameTree.Search("Emma"));
-            Console.WriteLine(girlsNameTree.Search("Non-Existent Name"));
-            Console.WriteLine(girlsNameTree.Search("Kabrina"));
+            //Console.WriteLine(girlsNameTree.Search("Ava"));
+            //Console.WriteLine(girlsNameTree.Search("Mia"));
+            //Console.WriteLine(girlsNameTree.Search("Emma"));
+            //Console.WriteLine(girlsNameTree.Search("Non-Existent Name"));
+            //Console.WriteLine(girlsNameTree.Search("Kabrina"));
         }
     }
 }

@@ -57,19 +57,22 @@ namespace BinarySearchTree
             }
             else
             {
-                if (Left != null)
+                if(this != null)
                 {
-                    Left.Search(name);
+                    if(this.Left != null)
+                    {
+                        Left.Search(name);
+                    }
+
+                    Console.WriteLine("Data: " + SData);
+
+                    if (this.Right != null)
+                    {
+                        Right.Search(name);
+                    }
                 }
 
-                Console.WriteLine("Data: " + SData);
-
-                if (Right != null)
-                {
-                    Right.Search(name);
-                }
-
-                return "Error";
+                return "";
             }
         }
     }
