@@ -25,6 +25,10 @@ namespace BinarySearchTree
             {
                 IData = position;
             }
+            if(SData == null)
+            {
+                SData = name;
+            }
             if(position <= IData) //If position is less than or equal to IData (existing position), the new node will go on the left
             {
                 if(Left == null) //If the left node is null
@@ -57,20 +61,19 @@ namespace BinarySearchTree
             }
             else
             {
-                if(this != null)
+                Console.WriteLine("Data: " + SData);
+                if (this.Left != null)
                 {
-                    if(this.Left != null)
-                    {
-                        Left.Search(name);
-                    }
-
-                    Console.WriteLine("Data: " + SData);
-
-                    if (this.Right != null)
-                    {
-                        Right.Search(name);
-                    }
+                    Left.Search(name);
                 }
+
+                Console.WriteLine("Data: " + SData);
+
+                if (this.Right != null)
+                {
+                    Right.Search(name);
+                }
+                Console.WriteLine("Data: " + SData);
 
                 return "";
             }
