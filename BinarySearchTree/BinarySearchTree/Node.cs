@@ -10,6 +10,7 @@ namespace BinarySearchTree
         int IData { get; set; }    // represents place on top ten list
         Node Left { get; set; }    // left child (left subtree)
         Node Right { get; set; }   // right child (right subtree)
+        List<string> namesList = new List<string>();
 
         public Node() { }
 
@@ -21,6 +22,11 @@ namespace BinarySearchTree
 
         public void Insert(int position, string name)
         {
+            if (!namesList.Contains(name))
+            {
+                namesList.Add(name);
+            }
+            
             if (IData == 0)
             {
                 IData = position;
@@ -50,6 +56,16 @@ namespace BinarySearchTree
                 {
                     Right.Insert(position, name);
                 }
+            }
+        }
+
+        public void DFS()
+        {
+            namesList.Sort();
+            Console.WriteLine("Sorted list:" + "\n");
+            foreach(string n in namesList)
+            {
+                Console.WriteLine(n);
             }
         }
 
@@ -101,6 +117,51 @@ namespace BinarySearchTree
                     return null;
                 }
             }
+        }
+
+        public void InOrder(Node n)
+        {
+            if(Left != null)
+            {
+                InOrder(Left);
+            }
+
+            Console.WriteLine(IData);
+
+            if(Right != null)
+            {
+                InOrder(Right);
+            }
+        }
+
+        public void PreOrder(Node n)
+        {
+            Console.WriteLine(IData);
+
+            if (Left != null)
+            {
+                InOrder(Left);
+            }
+            
+            if (Right != null)
+            {
+                InOrder(Right);
+            }
+        }
+
+        public void PostOrder(Node n)
+        {
+            if (Left != null)
+            {
+                InOrder(Left);
+            }
+            
+            if (Right != null)
+            {
+                InOrder(Right);
+            }
+
+            Console.WriteLine(IData);
         }
     }
 }

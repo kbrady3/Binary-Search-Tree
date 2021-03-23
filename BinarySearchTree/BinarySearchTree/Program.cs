@@ -22,6 +22,7 @@ namespace BinarySearchTree
             Console.WriteLine(boysNameTree.Search("Ethan"));
             Console.WriteLine(boysNameTree.Search("Non-Existent Name"));
             Console.WriteLine(boysNameTree.Search("Kabrina"));
+            boysNameTree.DFS();
 
             Node girlsNameTree = new Node();
             girlsNameTree.Insert(5, "Isabella");
@@ -39,6 +40,7 @@ namespace BinarySearchTree
             Console.WriteLine(girlsNameTree.Search("Emma"));
             Console.WriteLine(girlsNameTree.Search("Non-Existent Name"));
             Console.WriteLine(girlsNameTree.Search("Kabrina"));
+            girlsNameTree.DFS();
         }
     }
 }
