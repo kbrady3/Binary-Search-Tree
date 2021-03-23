@@ -57,24 +57,49 @@ namespace BinarySearchTree
         {
             if (name == SData)
             {
-                return "Search results: Name: " + SData + ", Position: " + IData;
+                return name;
             }
             else
             {
-                try
+                string leftResult = "";
+                string rightResult = "";
+
+                try //Ensures Search method doesn't throw exception if null result returned
                 {
-                    if (Left != null)
+                    //Searches both sides of the tree, expecting an exception if either returns null
+                    leftResult = Left.Search(name);
+                    try
                     {
-                        return Left.Search(name);
+                        rightResult = Right.Search(name);
                     }
-                    else
+                    catch
                     {
-                        return Right.Search(name);
                     }
                 }
                 catch
                 {
-                    return "No results found for search term '" + name + "'.";
+                    try
+                    {
+                        rightResult = Right.Search(name);
+                    }
+                    catch
+                    {
+                    }
+                }
+
+                if (leftResult == name)
+                {
+                    Console.WriteLine("Name: " + Left.SData + ", Position: " + Left.IData);
+                    return "Name: " + Left.SData + ", Position: " + Left.IData;
+                }
+                else if (rightResult == name)
+                {
+                    Console.WriteLine("Name: " + Right.SData + ", Position: " + Right.IData);
+                    return "Name: " + Right.SData + ", Position: " + Right.IData;
+                }
+                else
+                {
+                    return null;
                 }
             }
         }

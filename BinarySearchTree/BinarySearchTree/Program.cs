@@ -19,7 +19,7 @@ namespace BinarySearchTree
             boysNameTree.Insert(4, "Jacob");
             Console.WriteLine(boysNameTree.Search("Noah"));
             Console.WriteLine(boysNameTree.Search("Liam"));
-            Console.WriteLine(boysNameTree.Search("Jacob"));
+            Console.WriteLine(boysNameTree.Search("Ethan"));
             Console.WriteLine(boysNameTree.Search("Non-Existent Name"));
             Console.WriteLine(boysNameTree.Search("Kabrina"));
 
