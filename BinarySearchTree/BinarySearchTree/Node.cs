@@ -66,11 +66,10 @@ namespace BinarySearchTree
 
                 try //Ensures Search method doesn't throw exception if null result returned
                 {
-                    //Searches both sides of the tree, expecting an exception if either returns null
-                    leftResult = Left.Search(name);
+                    leftResult = Left.Search(name); //Searches left side of tree, expecting an exception if it returns null
                     try
                     {
-                        rightResult = Right.Search(name);
+                        rightResult = Right.Search(name); //Provided Left.Search does not throw exception, search right side
                     }
                     catch
                     {
@@ -80,7 +79,7 @@ namespace BinarySearchTree
                 {
                     try
                     {
-                        rightResult = Right.Search(name);
+                        rightResult = Right.Search(name); //If Left.Search in "try" above throws an exception, it will jump directly here, where it will try searching the right side instead. No need to check left side because it was already checked in the above "try".
                     }
                     catch
                     {
